@@ -1,9 +1,6 @@
 import socket                  
-s = socket.socket()            
-host = socket.gethostname()    
-port = 6000                  
-
-s.connect((host, port))
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("0.0.0.0", 12345))
 
 with open('received_file', 'wb') as f:
     print('file opened')

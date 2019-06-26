@@ -1,10 +1,7 @@
 import socket                  
 
-port = 6000                   
-s = socket.socket()            
-host = socket.gethostname()   
-print(host)  
-s.bind((host, port))            
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.bind(("0.0.0.0", 12345))                          
 s.listen(5)                     
 print('Server listening....')
 
